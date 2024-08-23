@@ -1,0 +1,438 @@
+/* Base Styles (for large screens/desktops) */
+@font-face {
+    font-family: nb;
+    src: url(./NBInternationalProBoo.ttf);
+}
+
+@font-face {
+    font-family: rejoy;
+    src: url(./Rejouice-Headline.ttf);
+}
+
+@font-face {
+    font-family: hv;
+    src: url(./Helvetica.ttf);
+}
+
+@font-face {
+    font-family: mido;
+    src: url(./Midorima-PersonalUse-Regular.ttf);
+}
+
+@font-face {
+    font-family: kara;
+    src: url(./Karasasha.ttf);
+}
+
+@font-face {
+    font-family: mig;
+    src: url(./MigatsuLight-MApRB.ttf);
+}
+
+#page>h1{
+    font-size: 80px;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    white-space: nowrap; /* Prevent text from wrapping */
+
+
+}
+
+
+.title {
+    display: block;
+    font-size: 0.6em; /* Adjust as needed */
+    color: #ffffff; /* Or another color to fit your theme */
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+
+#about{
+    z-index: 99;
+    color: white;
+    padding: 20;
+    font-size: xx-large;
+    font-family: mig;
+}
+
+#page > h2 {
+    font-size: 80px; /* Adjust this for responsiveness if needed */
+    font-family: kara; /* Ensure your custom font 'Kara' is properly imported */
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    top: 50%; /* Center vertically */
+    right: 75%; /* Adjust this value to control the horizontal positioning from the right edge */
+    transform: translateY(-50%) rotate(-90deg); /* Center vertically and rotate text */
+    color: crimson;
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-weight: 100;
+}
+
+/* Style for h1 inside #page1 */
+#page1 > h1 {
+    font-size: 80px;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Style for h2 inside #page1 */
+#page1 > h2 {
+    font-size: 80px; /* Adjust this for responsiveness if needed */
+    font-family: 'Kara', serif; /* Ensure your custom font 'Kara' is properly imported */
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    top: 50%; /* Center vertically */
+    right: 75%; /* Adjust this value to control the horizontal positioning from the right edge */
+    transform: translateY(-50%) rotate(-90deg); /* Center vertically and rotate text */
+    color: crimson;
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-weight: 100;
+}
+
+/* Media queries for specific breakpoints */
+@media (max-width: 1200px) {
+    #page > h2 {
+        font-size: 6vw; /* Adjust font size for medium screens */
+        top: 60%;
+        right: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    #page > h2 {
+        font-size: 7vw; /* Adjust font size for smaller screens */
+        right: 49%;
+    }
+}
+
+@media (max-width: 600px) {
+    #page > h1{
+        font-size: 50px;
+    }
+    #page > h2 {
+        font-size: 8vw; /* Adjust font size for very small screens */
+        right: 49%;
+    }
+}
+
+@media (max-width: 400px) {
+    #page > h2 {
+        font-size: 10vw; /* Adjust font size for extra-small screens */
+        padding: 0 10px;
+        right: 45%; /* Reduce padding on very small screens */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+}
+.hero-header {
+    display: flex;
+    align-items: center;
+    font-size: 5vw;
+    font-family: 'Kara', serif;
+    color: crimson;
+    position: relative;
+}
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    margin-left: 1vw; /* Space between name and scroll indicator */
+}
+
+
+
+.scroll-indicator span{
+    color: crimson;
+    font-size: 40;
+    text-align: center;
+   padding: 4;
+}
+
+.scroll-text {
+    font-size: 0.5em; /* Makes the "Scroll" text smaller relative to the name */
+    font-family: 'Kara', serif;
+    margin-right: 0.3vw; /* Space between the text and the icon */
+    color: crimson;
+    padding: 2;
+    gap: 2;
+
+}
+.scroll-icon-container {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.8em; /* Size of the circle */
+    height: 0.8em; /* Size of the circle */
+    border: 2px dotted white; /* Dotted border */
+    border-radius: 50%; /* Circular shape */
+    background-color: transparent; /* No background color */
+}
+
+.scroll-icon {
+    width: 0.5em;
+    height: 0.5em;
+    stroke-width: 2px;
+    stroke: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: mido;
+    background: transparent;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vh 3vh;
+    background-color: transparent; /* Makes the navbar transparent */
+    width: 100%;
+    position: fixed; /* Keeps the navbar fixed at the top */
+    top: 0; /* Aligns the navbar to the top of the page */
+    left: 0; /* Aligns the navbar to the left edge of the page */
+    z-index: 1000; /* Ensures the navbar is above other content */
+}
+
+#text-animation {
+    font-size: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+/* Styling for the brand or name */
+nav h3 {
+    
+    font-size: 1.4vw;
+    font-weight: 100;
+    color: #fff; /* Adjust text color if needed */
+}
+
+/* Styling for the menu or other text */
+nav h4 {
+    font-size: 1.4vw;
+    color: #fff; /* Adjust text color if needed */
+}
+
+
+#loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    background-color: #000;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+
+#loader h3{
+    font-size: 3vw;
+    display: block;
+}
+
+
+#page2{
+    height: 20vh;
+    width: 100vw;
+    background-color: transparent;
+    position: relative;
+
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 2vh 2vh; /* Adjust padding for smaller screens */
+    }
+    nav h3, nav h4 {
+        font-size: 3.5vw; /* Increase font size slightly for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: row; /* Stack items vertically on very small screens */
+        padding: 2vh 1vh; /* Reduce padding even further */
+    }
+    nav h3, nav h4 {
+        font-size: 4.5vw; /* Increase font size further for readability on small screens */
+        text-align: center; /* Center text for a cleaner look */
+        margin-bottom: 1vh;
+    }
+}
+
+#page {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+canvas {
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+}
+
+#move{
+    background-color: crimson;
+    display: flex;
+    padding: 3vw 0;
+    overflow: hidden;
+
+}
+
+#marque img{
+    height: 80px;
+    rotate: 15deg;
+}
+
+#marque{
+    display: flex;
+    align-items: center;
+   
+    z-index: 99;
+    color: white;
+    gap: 3vw;
+    padding: 0 1.5vw;
+    flex-shrink: 0;
+    transform: translateX(-100%);
+
+}
+
+#marque h1{
+    font-size: 70px;
+}
+
+.hero {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: transparent;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    max-width: 600px;
+    background-color: transparent;
+}
+
+.hero h1,
+.hero p {
+    color: #B22222; /* Deep, rich red inspired by samurai kabuto */
+    background-color: transparent;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: rejoy;
+}
+
+.hero-title {
+    font-size: 5rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #8B0000; /* Darker red for the title */
+}
+
+.hero-subtitle {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #FF4500; /* Fiery red for the subtitle */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #800000; /* Deep red background */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button.secondary {
+    background-color: #555;
+}
+
+.cta-button:hover {
+    background-color: #B22222; /* Lighter red on hover */
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+}
+
+.hero-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
