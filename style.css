@@ -30,7 +30,7 @@
 }
 
 #page>h1{
-    font-size: 80px;
+    font-size: 60px;
     position: absolute;
     z-index: 99;
     text-align: center;
@@ -60,7 +60,7 @@
 }
 
 #page > h2 {
-    font-size: 80px; /* Adjust this for responsiveness if needed */
+    font-size: 60px; /* Adjust this for responsiveness if needed */
     font-family: kara; /* Ensure your custom font 'Kara' is properly imported */
     position: absolute;
     z-index: 99;
@@ -113,7 +113,7 @@
 @media (max-width: 900px) {
     #page > h2 {
         font-size: 7vw; /* Adjust font size for smaller screens */
-        right: 49%;
+        right: 65%;
     }
 }
 
@@ -123,7 +123,7 @@
     }
     #page > h2 {
         font-size: 8vw; /* Adjust font size for very small screens */
-        right: 49%;
+        right: 59%;
     }
 }
 
