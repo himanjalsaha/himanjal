@@ -53,10 +53,20 @@
 
 #about{
     z-index: 99;
-    color: white;
-    padding: 20;
+    color: black;
+    padding: 40px;
     font-size: xx-large;
     font-family: mig;
+    position: relative;
+    font-weight: bold;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+    
 }
 
 #page > h2 {
@@ -82,7 +92,7 @@
     top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
@@ -111,6 +121,9 @@
 }
 
 @media (max-width: 900px) {
+    #page>h1{
+        font-size: 6vw;
+    }
     #page > h2 {
         font-size: 7vw; /* Adjust font size for smaller screens */
         right: 65%;
@@ -120,6 +133,7 @@
 @media (max-width: 700px) {
     #page > h1{
         font-size: 40px;
+       
     }
     #page > h2 {
         font-size: 8vw; /* Adjust font size for very small screens */
@@ -156,7 +170,26 @@
     margin-left: 1vw; /* Space between name and scroll indicator */
 }
 
+#about span{
+    color: white;
+    background-color: crimson;
+    padding: 3px;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 80;
+}
 
+#redsun{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    z-index: 1; /* Make sure the image is behind the text */
+    object-fit: cover; /* Ensures the image covers the entire space without distortion */
+opacity: 0.8;
+}
 
 .scroll-indicator span{
     color: crimson;
@@ -204,6 +237,16 @@ html, body {
     position: relative;
     overflow: hidden;
 }
+
+.container {
+    margin: 9px;
+  padding: 3px; 
+  height: 100%; 
+  position: absolute; 
+  bottom: 90; 
+  top: -5;          /* Set a specific width for the container */
+}
+
 
 nav {
     position: sticky;
@@ -307,6 +350,13 @@ canvas {
 }
 
 #page1 {
+    height: 100vh;
+    width: 100vw;
+    background-color: beige;
+    position: relative;
+}
+
+#page3 {
     height: 100vh;
     width: 100vw;
     background-color: black;

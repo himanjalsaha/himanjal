@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Cloud Demo</title>
+  <style>
+    .relative {
+      position: relative;
+    }
+    .flex {
+      display: flex;
+    }
+    .h-full {
+      height: 100%;
+    }
+    .w-full {
+      width: 100%;
+    }
+    .max-w-32rem {
+      max-width: 32rem;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    .border {
+      border: 1px solid #e2e8f0;
+    }
+    .bg-background {
+      background-color: #f7fafc;
+    }
+    .px-20 {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    .pb-20 {
+      padding-bottom: 5rem;
+    }
+    .pt-8 {
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="icon-cloud-demo" class="relative flex h-full w-full max-w-32rem items-center justify-center overflow-hidden rounded-lg border bg-background px-20 pb-20 pt-8">
+    <!-- Icon Cloud will be injected here -->
+  </div>
+
+  <script>
+    const slugs = [
+      "typescript", "javascript", "dart", "java", "react", "flutter", "android", 
+      "html5", "css3", "nodedotjs", "express", "nextdotjs", "prisma", "amazonaws", 
+      "postgresql", "firebase", "nginx", "vercel", "testinglibrary", "jest", 
+      "cypress", "docker", "git", "jira", "github", "gitlab", "visualstudiocode", 
+      "androidstudio", "sonarqube", "figma"
+    ];
+
+    function createIconElement(slug) {
+      const icon = document.createElement('div');
+      icon.className = `icon icon-${slug}`;
+      icon.textContent = slug; // Placeholder for the actual icon, replace with appropriate logic
+      return icon;
+    }
+
+    function createIconCloud(iconSlugs) {
+      const fragment = document.createDocumentFragment();
+      iconSlugs.forEach(slug => {
+        fragment.appendChild(createIconElement(slug));
+      });
+      return fragment;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const iconCloudContainer = document.getElementById('icon-cloud-demo');
+      const iconCloud = createIconCloud(slugs);
+      iconCloudContainer.appendChild(iconCloud);
+    });
+  </script>
+</body>
+</html>

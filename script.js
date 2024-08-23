@@ -390,3 +390,8 @@ function animateScrollBackward() {
 //       repeat: -1      // Repeat the animation indefinitely
 //   });
 // });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutSection = document.getElementById('about');
+  aboutSection.classList.add('animate');
+});
