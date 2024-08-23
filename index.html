@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,7 +6,52 @@
     <title>Himanjal Saha</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-
+    <style>
+        /* Reset margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+    
+        /* Ensure no scrolling space around the video */
+        body {
+            overflow: hidden;
+        }
+    
+        /* Initial styles */
+        #canvas, #video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    
+        /* Hide video by default */
+        #video {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+        }
+    
+        /* Show video and hide canvas on smaller screens */
+        @media (max-width: 768px) {
+            #canvas {
+                display: none;
+            }
+            #video {
+                display: block;
+                height: 100vh;
+                width: 100vw;
+                object-fit: cover; /* Ensures the video covers the entire area */
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <div id="loader">
@@ -16,26 +62,16 @@
     </div>
     
     <div id="main">
-       
-    
         <div id="page"> 
             <div style="width: 100vh;">
                 <nav>
                     <h3>The Venture Agency</h3>
                     <h3>Menu</h3>
                 </nav>
-    
-                
             </div>
             
-         
-            
-          
-
-     
             <h1 id="name">Himanjal Saha
                 <span class="title">Full Stack Developer</span>
-
                 <div class="scroll-indicator">
                     <span>Scroll</span>
                     <div class="scroll-icon-container">
@@ -44,7 +80,6 @@
                             <polyline points="19 12 12 19 5 12"></polyline>
                         </svg>
                     </div>
-                    
                 </div>
             </h1>
           
@@ -54,47 +89,38 @@
                 <span>H</span><span>o</span><span>n</span><span>o</span><span>r</span><span>.</span>
             </h2>
             
-            
-    
-            
-        
-            <canvas></canvas>
+            <!-- Canvas element -->
+            <canvas id="canvas"></canvas>
+
+            <!-- Video element -->
+            <video id="video" loop muted autoplay src="/videoplayback(1).mp4"></video>
         </div>
         <div id="page1">
-           
-
-           <div id="move">
-            <div id="marque">
-                <h1>precision and Honor</h1>
-                <img src="/pngwing.com.png" alt="">
+            <div id="move">
+                <div id="marque">
+                    <h1>precision and Honor</h1>
+                    <img src="/pngwing.com.png" alt="">
+                </div>
+                <div id="marque">
+                    <h1>precision and Honor</h1>
+                    <img src="/pngwing.com.png" alt="">
+                </div>
+                <div id="marque">
+                    <h1>precision and Honor</h1>
+                    <img src="/pngwing.com.png" alt="">
+                </div>
+                <div id="marque">
+                    <h1>precision and Honor</h1>
+                    <img src="/pngwing.com.png" alt="">
+                </div>
+                <div id="marque">
+                    <h1>precision and Honor</h1>
+                    <img src="/pngwing.com.png" alt="">
+                </div>
             </div>
-            <div id="marque">
-                <h1>precision and Honor</h1>
-                <img src="/pngwing.com.png" alt="">
+            <div id="about">Welcome, Digital Samurai.
+                I’m Himanjal, a skilled full stack developer dedicated to crafting elegant and functional digital experiences. Like a samurai perfecting his craft, I approach each project with precision and commitment, aiming to create websites and applications that exceed expectations.
             </div>
-            <div id="marque">
-                <h1>precision and Honor</h1>
-                <img src="/pngwing.com.png" alt="">
-            </div>
-            
-            <div id="marque">
-                <h1>precision and Honor</h1>
-                <img src="/pngwing.com.png" alt="">
-            </div>
-            
-            <div id="marque">
-                <h1>precision and Honor</h1>
-                <img src="/pngwing.com.png" alt="">
-            </div>
-             
-
-           </div>
-
-           <div id="about">Welcome, Digital Samurai.
-
-            I’m Himanjal, a skilled full stack developer dedicated to crafting elegant and functional digital experiences. Like a samurai perfecting his craft, I approach each project with precision and commitment, aiming to create websites and applications that exceed expectations.</div>
-    
-
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>

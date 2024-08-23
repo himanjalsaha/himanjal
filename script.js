@@ -320,40 +320,67 @@ tl.to("#loader",{
 // });
 
 
-window.addEventListener("wheel" ,function(dets){
-if(dets.deltaY>0){
-  gsap.to("#marque", {
-    xPercent: -200, // Move the element 100% of its width to the left
-    duration: 5,   // Duration of the animation in seconds
-    ease: "linear", // Linear easing for smooth constant speed
-    repeat: -1      // Repeat the animation indefinitely
+// Initialize variables to track touch position
+let touchStartY = 0;
+let touchEndY = 0;
+
+// Handle wheel scroll for desktops
+window.addEventListener("wheel", function(dets) {
+    if (dets.deltaY > 0) {
+        animateScrollForward();
+    } else {
+        animateScrollBackward();
+    }
 });
-gsap.to("#marque img",{
-  rotate:195,
 
-})
-
-gsap.to(".scroll-icon-container",{
-  rotate:0
-})
-}
-else{
-  gsap.to("#marque", {
-    xPercent: 0, // Move the element 100% of its width to the left
-    duration: 5,   // Duration of the animation in seconds
-    ease: "linear", // Linear easing for smooth constant speed
-    repeat: -1      // Repeat the animation indefinitely
+// Handle touch events for mobile devices
+window.addEventListener("touchstart", function(e) {
+    touchStartY = e.touches[0].clientY;
 });
-gsap.to("#marque img",{
-  rotate:0,
-  
-})
-gsap.to(".scroll-icon-container",{
-  rotate:180
-})
 
+window.addEventListener("touchmove", function(e) {
+    touchEndY = e.touches[0].clientY;
+});
+
+window.addEventListener("touchend", function() {
+    if (touchStartY > touchEndY) {
+        animateScrollForward();
+    } else if (touchStartY < touchEndY) {
+        animateScrollBackward();
+    }
+});
+
+// Function to animate forward scroll
+function animateScrollForward() {
+    gsap.to("#marque", {
+        xPercent: -200, // Move the element 200% of its width to the left
+        duration: 5,   // Duration of the animation in seconds
+        ease: "linear", // Linear easing for smooth constant speed
+        repeat: -1      // Repeat the animation indefinitely
+    });
+    gsap.to("#marque img", {
+        rotate: 195,
+    });
+    gsap.to(".scroll-icon-container", {
+        rotate: 0,
+    });
 }
-})
+
+// Function to animate backward scroll
+function animateScrollBackward() {
+    gsap.to("#marque", {
+        xPercent: 0, // Move the element back to its original position
+        duration: 5,   // Duration of the animation in seconds
+        ease: "linear", // Linear easing for smooth constant speed
+        repeat: -1      // Repeat the animation indefinitely
+    });
+    gsap.to("#marque img", {
+        rotate: 0,
+    });
+    gsap.to(".scroll-icon-container", {
+        rotate: 180,
+    });
+}
 
 // document.addEventListener("DOMContentLoaded", function() {
 //   gsap.to("#marque", {

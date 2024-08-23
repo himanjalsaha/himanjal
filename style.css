@@ -117,9 +117,9 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #page > h1{
-        font-size: 50px;
+        font-size: 40px;
     }
     #page > h2 {
         font-size: 8vw; /* Adjust font size for very small screens */
