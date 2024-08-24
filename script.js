@@ -382,16 +382,154 @@ function animateScrollBackward() {
     });
 }
 
-// document.addEventListener("DOMContentLoaded", function() {
-//   gsap.to("#marque", {
-//       xPercent: -100, // Move the element 100% of its width to the left
-//       duration: 5,   // Duration of the animation in seconds
-//       ease: "linear", // Linear easing for smooth constant speed
-//       repeat: -1      // Repeat the animation indefinitely
+
+
+
+
+var page1Content=document.querySelector("#page")
+var cursor = document.querySelector("#cursor")
+page1Content.addEventListener("mousemove",function(dets){
+console.log(dets);
+
+gsap.to(cursor,{
+    x:dets.x,
+    y:dets.y
+})
+    
+})
+
+page1Content.addEventListener("mouseenter",function(dets){
+    //    cursor.style.left = dets.x+"px"
+    //    cursor.style.top=dets.y+"px"
+    gsap.to(cursor,{
+        scale:1,
+       opacity:1
+    })
+        
+    })
+
+    page1Content.addEventListener("mouseleave",function(dets){
+        //    cursor.style.left = dets.x+"px"
+        //    cursor.style.top=dets.y+"px"
+        gsap.to(cursor,{
+            scale:0,
+          opacity:0
+        })
+            
+        })
+
+//         const observer = new IntersectionObserver((entries)=>{
+//           entries.forEach((entry)=>{
+//             if(entry.isIntersecting){
+//               entry.target.classList.add('show')
+//             }
+//             else{
+//               entry.target.classList.remove('show')
+//             }
+//           })
+//         })
+// const hidden = document.querySelectorAll(".container")
+// const hiddenelems = document.querySelectorAll('.container')
+// hiddenelems.forEach((el)=>observer.observe(el))
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const projectListItems = document.querySelectorAll('.project-list li');
+//   const videoSource = document.getElementById('video-source');
+//   const projectVideo = document.getElementById('project-video');
+
+//   projectListItems.forEach(item => {
+//       item.addEventListener('click', function () {
+//           const videoFile = this.getAttribute('data-video');
+//           videoSource.src = videoFile;
+//           projectVideo.load();
+//           projectVideo.play();
+//       });
 //   });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const aboutSection = document.getElementById('about');
-  aboutSection.classList.add('animate');
+
+document.addEventListener('DOMContentLoaded', function () {
+  const projectListItems = document.querySelectorAll('.project-list li');
+  const projectVideo = document.getElementById('project-video');
+  const projectDescription = document.getElementById('project-description');
+
+  projectListItems.forEach(item => {
+      item.addEventListener('mouseenter', function () {
+          const videoFile = this.getAttribute('data-video');
+          const description = this.getAttribute('data-description');
+
+          gsap.to('.video-container', {
+            opacity: 1,
+            
+           
+        });
+
+          // Change the video source with GSAP animation
+          gsap.to(projectVideo, {
+              opacity: 0,
+              duration: 0.5,
+              onComplete: () => {
+                  projectVideo.src = videoFile;
+                  projectVideo.load();
+                  projectVideo.play();
+                  gsap.to(projectVideo, { opacity: 1, duration: 0.5 });
+              }
+          });
+
+          gsap.to(projectDescription, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+                projectDescription.innerText = description;
+                gsap.to(projectDescription, { opacity: 1, duration: 0.5 });
+            }
+        });
+      });
+
+      item.addEventListener('mouseleave', function () {
+          // Optional: You can keep the video playing or pause/reset it on hover out
+          gsap.to(projectVideo, {
+            opacity: 0,
+           
+           
+        });
+
+      });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Animation for the line
+  gsap.from('.timeline-svg line', {
+      strokeDashoffset: 1000,
+      strokeDasharray: 1000,
+      duration: 2,
+      ease: 'power2.inOut',
+      repeat: -1,            // Repeat indefinitely
+      repeatDelay: 2,        // Delay between repeats
+      yoyo: true             // Makes the animation reverse
+  });
+
+  // Animation for the circles
+  gsap.from('.timeline-svg circle', {
+      scale: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: 'bounce.out',
+      repeat: -1,            // Repeat indefinitely
+      repeatDelay: 2,        // Delay between repeats
+  });
+
+  // Animation for the text
+  gsap.from('.timeline-svg text', {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      stagger: 0.3,
+      ease: 'power2.inOut',
+            // Repeat indefinitely
+      repeatDelay: 2,        // Delay between repeats
+  });
 });
